@@ -39,7 +39,7 @@ class NewVisitorTest(unittest.TestCase):
         # 待办事项表格中显示了“1: Buy flowers”
         inputbox.send_keys(Keys.ENTER)  # (3)
         time.sleep(1)  # (4)
-        self.check_for_row_in_list_table('1: Buy flowers')
+        self.check_for_row_in_list_table('1:Buy flowers')
 
         # 页面中又显示了一个文本输入框，可以输入其他待办事项
         # 他输入了“Give a gift to Lisi”
@@ -49,8 +49,8 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(1)
 
         # 页面再次更新，她的清单中显示了这两个待办事项
-        self.check_for_row_in_list_table('1: Buy flowers')
-        self.check_for_row_in_list_table('2: Give a gift to Lisi')
+        self.check_for_row_in_list_table('1:Buy flowers')
+        self.check_for_row_in_list_table('2:Give a gift to Lisi')
 
         # 张三想知道这个网站是否会记住她的清单
         # 他看到网站为他生成了一个唯一的URL
