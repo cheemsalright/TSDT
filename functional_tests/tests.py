@@ -52,7 +52,7 @@ class NewVisitorTest(LiveServerTestCase):
         # 他按了回车键后，页面更新了
         # 待办事项表格中显示了“1: Buy flowers”
         inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table('1:Buy flowers')
+        self.wait_for_row_in_list_table('1: Buy flowers')
 
         # 页面中又显示了一个文本输入框，可以输入其他待办事项
         # 他输入了“Give a gift to Lisi”
@@ -61,8 +61,8 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox.send_keys(Keys.ENTER)
 
         # 页面再次更新，她的清单中显示了这两个待办事项
-        self.wait_for_row_in_list_table('1:Buy flowers')
-        self.wait_for_row_in_list_table('2:Give a gift to Lisi')
+        self.wait_for_row_in_list_table('1: Buy flowers')
+        self.wait_for_row_in_list_table('2: Give a gift to Lisi')
 
     def test_multiple_users_can_start_lists_at_different_urls(self):
         # 张三新建一个待办事项清单
@@ -70,7 +70,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element(By.ID, 'id_new_item')
         inputbox.send_keys('Buy flowers')
         inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table('1:Buy flowers')
+        self.wait_for_row_in_list_table('1: Buy flowers')
 
         # 他注意到清单有个唯一的URL
         zhangsan_list_url = self.browser.current_url
@@ -93,7 +93,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element(By.ID, 'id_new_item')
         inputbox.send_keys('Buy milk')
         inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table('1:Buy milk')
+        self.wait_for_row_in_list_table('1: Buy milk')
 
         # 王五获得了他的唯一URL
         wangwu_list_url = self.browser.current_url
