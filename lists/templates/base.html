@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3 jumbotron">
                 <div class="text-center">
-                    <h1>start a new To-Do list</h1>
+                    <h1>Your To-Do list</h1>
                     <form method="POST" action="{% block form_action %}{% endblock %}">
                         <input name="item_text" id="id_new_item" class="form-control input-lg" placeholder="Enter a to-do item" />
                         {% csrf_token %}
